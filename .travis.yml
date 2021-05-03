@@ -2,7 +2,7 @@ language: python
 
 # Versão que a aplicação suporta.
 python:
-  - "3.6.9"
+  - "3.7.9"
 
 # Instalação de Módulos que são necessários para a Aplicação.
 install:
@@ -11,3 +11,12 @@ install:
 # Defini o script de Teste que deve rodar toda vez que o código for alterado.
 script:
   - python -m unittest -v test
+
+# Definir o Deploy no Heroku
+deploy:
+  provider: heroku
+  api_key: $HEROKU_API_KEY
+  edge: true
+  app: devoposlab-manoed
+  on:
+      branch: main
