@@ -16,8 +16,8 @@ script:
 
 # Definir o Deploy no Heroku
 deploy:
-  strategy: api
-  - provider: heroku
+  - provider: heroku        
+    strategy: api
     api_key: $HEROKU_API_KEY
     edge: true
     app: devoposlab-manoed
